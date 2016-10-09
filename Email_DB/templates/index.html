@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <style>
+        .error {
+            background-color: red;
+        }
+    </style>
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="error">
+                    
+                    {% for message in messages %}
+                        {{messages}}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        <form action = "/email" method = "post">
+            <input type="text" name="email" value="">
+            <input type="submit" name="email" value="SUBMIT">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+       <h1>Email Addresses Entered</h1>
+        {% for elements in emails %}
+        <li>{{elements['email']}} {{elements['created_at']}} {{elements['id']}}
+        <a href="/delete/{{elements['id']}}">Remove</a>
+        </li>
+        {% endfor %}
+    </body>
+</html>
