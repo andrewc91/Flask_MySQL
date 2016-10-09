@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Full Friends Assignment</title>
+    </head>
+    <body>
+        <form action="/friends" method="post">
+            First Name: <input type="text" name="first_name">
+            Last Name: <input type="text" name="last_name">
+            Email: <input type="email" name="email">
+            <input type="submit" name="submit" value="SUBMIT">
+        </form>
+        
+        {% for elements in friend %}
+        <li>{{elements['first_name']}} {{elements['last_name']}} {{elements['email']}} 
+        <a href="/friends/{{elements['id']}}/delete"><button>REMOVE</button></a>
+        </li>
+        {% endfor %}
+        
+    </body>
+</html>
