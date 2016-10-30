@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Wall</title>
+    </head>
+    <body>
+        <h1>Welcome to the wall, {{session['first_name'] }}</h1>
+        {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+        {% endwith %}
+        <form action="/message" method="post">
+            <textarea name="message"></textarea>
+            <input type="submit" name="post_message" value="POST">
+        </form>
+        {% for message in messages %}
+        {{ message['first_name'] }}
+        {{ message['last_name'] }}
+        <p>{{ message['message'] }}</p>
+        {% endfor %} 
+    </body>
+</html>
